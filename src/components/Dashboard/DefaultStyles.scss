@@ -1,0 +1,22 @@
+.default-dashboard-container{
+    .heading{
+        display: flex;
+        justify-content: space-between;
+
+        .heading-buttons{
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            .icons{
+                color: #4782da;
+            }
+            .button{
+                background-color: #4782da;
+                color: white;
+                font-size: 16px;
+                font-weight: 500;
+                padding: 6px 15px;
+            }
+        }
+    }
+}

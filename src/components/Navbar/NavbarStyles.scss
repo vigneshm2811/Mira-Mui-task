@@ -1,0 +1,23 @@
+
+
+.toolbar{
+    display: flex;
+    padding: 15px 30px !important;
+    justify-content: space-between;
+    align-items: center;
+    .icons-wrapper{
+        color: gray;
+        display: flex;
+        justify-content: space-around;
+        gap: 20px;
+        .icons{
+            font-size: 28px;
+            cursor: pointer;
+        }
+        .flag-img{
+            width: 28px;
+            height: 28px;
+            cursor: pointer;
+        }
+    }
+}
