@@ -10,12 +10,12 @@ import List from "@mui/material/List";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import Collapse from "@mui/material/Collapse";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
+import PieChartIcon from '@mui/icons-material/PieChart';
 import EqualizerIcon from '@mui/icons-material/Equalizer';
-import SendIcon from "@mui/icons-material/Send";
+import ListIcon from '@mui/icons-material/List';
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
-import StarBorder from "@mui/icons-material/StarBorder";
+import GridViewIcon from '@mui/icons-material/GridView';
 import SvgIcon from '@mui/material/SvgIcon';
 import WebIcon from '@mui/icons-material/Web';
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
@@ -25,12 +25,12 @@ import TaskAltIcon from '@mui/icons-material/TaskAlt';
 import EventIcon from '@mui/icons-material/Event';
 import PeopleOutlineIcon from '@mui/icons-material/PeopleOutline';
 import muiLogo from '../../assets/mui-logo.png'
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import MapIcon from '@mui/icons-material/Map';
 
 
 
-
-
-const drawerWidth = 270;
+const drawerWidth = 250;
 
 const Sidebar = () => {
   const [openDropdowns, setOpenDropdowns] = useState({});
@@ -183,7 +183,7 @@ const Sidebar = () => {
       id:"item-9",
       lable:"Components",
       dropdown:true,
-      icons:EqualizerIcon,
+      icons:GridViewIcon,
       children:[{
         id:"child-item-16",
         lable:"Default",
@@ -206,7 +206,7 @@ const Sidebar = () => {
       id:"item-10",
       lable:"Charts",
       dropdown:true,
-      icons:WebIcon,
+      icons:PieChartIcon,
       children:[{
         id:"child-item-19",
         lable:"Profile",
@@ -239,19 +239,19 @@ const Sidebar = () => {
       lable:"Forms",
       badge: 8,
       dropdown:true,
-      icons:BusinessCenterIcon
+      icons:TaskAltIcon
     },
     {
       id:"item-12",
       lable:"Tables",
       dropdown:true,
-      icons:ShoppingCartCheckoutIcon
+      icons:ListIcon
     },
     {
       id:"item-13",
       lable:"Icons",
       dropdown:true,
-      icons:CreditCardIcon,
+      icons:FavoriteBorderIcon,
       children:[{
         id:"child-item-24",
         lable:"List",
@@ -270,7 +270,7 @@ const Sidebar = () => {
       lable:"Maps",
       badge: 17,
       dropdown:true,
-      icons:TaskAltIcon
+      icons:MapIcon
     },
  
   ]
