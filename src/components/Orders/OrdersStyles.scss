@@ -1,0 +1,52 @@
+
+.orders-conatiner{
+    .heading{
+        display: flex;
+        justify-content: space-between;
+    
+        .heading-text{
+            h2{
+                line-height:0.4 ;
+            }
+
+            .links{
+                display: flex;
+                gap: 8px;
+                
+                span{
+                    font-size: 13px;
+                    font-weight: 400;
+                    color: #376fd0;
+                    cursor: pointer;
+                    &:hover{
+                        text-decoration: underline;
+                    }
+                }
+                span:last-child{
+                    color: gray;
+                    &:hover{
+                        text-decoration: none;
+                    }
+                }
+                .divider{
+                    border-right: 1px solid gray;
+                    transform: rotate(10deg);
+                }
+            }
+           
+        }
+        .heading-buttons{
+            display: flex;
+            align-items: center;
+            .button{
+                display: flex;
+                align-items: center;
+                background-color: #376fd0;
+                color: white;
+                font-size: 16px;
+                font-weight: 600;
+                padding: 6px 12px;
+            }
+        }
+    }
+}
