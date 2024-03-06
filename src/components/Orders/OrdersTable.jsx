@@ -18,6 +18,8 @@ import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';
+import CloudDownloadIcon from '@mui/icons-material/CloudDownload';
+import VisibilityIcon from '@mui/icons-material/Visibility';
 import DeleteIcon from '@mui/icons-material/Delete';
 import FilterListIcon from '@mui/icons-material/FilterList';
 import { visuallyHidden } from '@mui/utils';
@@ -36,16 +38,16 @@ function createData(id, orderId, Products, Date, Total, Status,payment,actions) 
 }
 
 const rows = [
-  createData(1, '#000260', "Woven Slippers", "2023-01-22","$20,00", "Shipped","PayPal","done"),
-  createData(2, '#000261',"Womens Watch", "2023-01-22", "$20,00", "Shipped","PayPal","done"),
-  createData(3, '#000257', "Unbreakable Water Bottle","2023-01-22", "$20,00", "Shipped","PayPal","done"),
-  createData(4, '#000258', "Spoon Saver", "2023-01-22", "$20,00", "Shipped","PayPal","done"),
-  createData(5, '#000253', "Salt & Pepper Grinder", "2023-01-22", "$20,00", "Shipped","PayPal","done"),
-  createData(6, '#000255', "Pocket Speaker", "2023-01-22", "$20,00", "Shipped","PayPal","done"),
-  createData(7, '#000262', "Over-Ear Headphones", "2023-01-22", "$20,00", "Shipped","PayPal","done"),
-  createData(8, '#000259',"Hip Flash", "2023-01-22", "$20,00", "Shipped","PayPal","done"),
-  createData(9, '#000256', "Glass Teapot", "2023-01-22", "$20,00", "Shipped","PayPal","done"), 
-  createData(10, '#000254', "Backpack", "2023-01-22", "$20,00", "Shipped","PayPal","done"),
+  createData(1, '#000260', "Woven Slippers", "2023-01-22","$32,00", "Shipped","Visa","done"),
+  createData(2, '#000261',"Womens Watch", "2023-01-22", "$130,00", "Shipped","PayPal","done"),
+  createData(3, '#000257', "Unbreakable Water Bottle","2023-01-22", "$20,00", "Cancelled","Mastercard","done"),
+  createData(4, '#000258', "Spoon Saver", "2023-01-22", "$45,00", "Shipped","Visa","done"),
+  createData(5, '#000253', "Salt & Pepper Grinder", "2023-01-22", "$80,00", "Shipped","PayPal","done"),
+  createData(6, '#000255', "Pocket Speaker", "2023-01-22", "$40,00", "Shipped","Mastercard","done"),
+  createData(7, '#000262', "Over-Ear Headphones", "2023-01-22", "$15,00", "Processing","PayPal","done"),
+  createData(8, '#000259',"Hip Flash", "2023-01-22", "$65,00", "Shipped","PayPal","done"),
+  createData(9, '#000256', "Glass Teapot", "2023-01-22", "$25,00", "Cancelled","Visa","done"), 
+  createData(10, '#000254', "Backpack", "2023-01-22", "$210,00", "Processing","Mastercard","done"),
 ];
 
 function descendingComparator(a, b, orderBy) {
@@ -149,7 +151,7 @@ function EnhancedTableHead(props) {
         {headCells.map((headCell) => (
           <TableCell
             key={headCell.id}
-            align={headCell.numeric ? 'right' : 'left'}
+            align={headCell.numeric?"center":"right"}
             padding={headCell.disablePadding ? 'none' : 'normal'}
             sortDirection={orderBy === headCell.id ? order : false}
           >
@@ -317,12 +319,14 @@ export default function OrdersTable() {
             size={dense ? 'small' : 'medium'}
           >
             <EnhancedTableHead
+            
               numSelected={selected.length}
               order={order}
               orderBy={orderBy}
               onSelectAllClick={handleSelectAllClick}
               onRequestSort={handleRequestSort}
               rowCount={rows.length}
+             
             />
             <TableBody>
               {visibleRows.map((row, index) => {
@@ -354,15 +358,25 @@ export default function OrdersTable() {
                       id={labelId}
                       scope="row"
                       padding="none"
+                      align='right'
                     >
                       {row.orderId}
                     </TableCell>
-                    <TableCell align="right">{row.Products}</TableCell>
-                    <TableCell align="right">{row.Date}</TableCell>
-                    <TableCell align="right">{row.Total}</TableCell>
-                    <TableCell align="right">{row.Status}</TableCell>
-                    <TableCell align="right">{row.payment}</TableCell>
-                    <TableCell align="right">{row.actions}</TableCell>
+                    <TableCell align="center">{row.Products}</TableCell>
+                    <TableCell align="center">{row.Date}</TableCell>
+                    <TableCell align="center">{row.Total}</TableCell>
+                    <TableCell align="center">
+                    <span className='status-badge'
+               style={{backgroundColor:row.Status==="Shipped"?"#4caf50":row.Status==="Cancelled"?"#f44336":"#f57c00"}}>
+                {row.Status}</span>
+                    </TableCell>
+                    <TableCell align="center">{row.payment}</TableCell>
+                    <TableCell align="center">
+                      <div style={{color:"#6c6c6c",display:"flex", justifyContent:"space-evenly"}}>
+                      <CloudDownloadIcon sx={{fontSize:"30px"}}/> 
+                      <VisibilityIcon sx={{fontSize:"30px"}}/>
+                      </div>
+                      </TableCell>
                   </TableRow>
                 );
               })}

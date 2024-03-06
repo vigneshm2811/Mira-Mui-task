@@ -27,6 +27,8 @@ import PeopleOutlineIcon from '@mui/icons-material/PeopleOutline';
 import muiLogo from '../../assets/mui-logo.png'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import MapIcon from '@mui/icons-material/Map';
+import { Link } from "react-router-dom";
+
 
 
 
@@ -51,17 +53,17 @@ const Sidebar = () => {
       children:[{
         id:"child-item-1",
         lable:"Default",
-        path:""
+        path:"/"
       },
       {
         id:"child-item-2",
         lable:"Analytics",
-        path:""
+        path:"/"
       },
       {
         id:"child-item-3",
         lable:"SaaS",
-        path:""
+        path:"/"
       },
     ]
 
@@ -74,27 +76,27 @@ const Sidebar = () => {
       children:[{
         id:"child-item-4",
         lable:"Profile",
-        path:""
+        path:"pages"
       },
       {
         id:"child-item-5",
         lable:"Settings",
-        path:""
+        path:"pages"
       },
       {
         id:"child-item-6",
         lable:"Pricing",
-        path:""
+        path:"pages"
       },
       {
         id:"child-item-7",
         lable:"Chat",
-        path:""
+        path:"pages"
       },
       {
         id:"child-item-8",
         lable:"Blank Page",
-        path:""
+        path:"pages"
       },
     ]
 
@@ -105,13 +107,15 @@ const Sidebar = () => {
       lable:"Projects",
       badge: 8,
       dropdown:false,
-      icons:BusinessCenterIcon
+      icons:BusinessCenterIcon,
+      path:"project/"
     },
     {
       id:"item-4",
       lable:"Orders",
       dropdown:false,
-      icons:ShoppingCartCheckoutIcon
+      icons:ShoppingCartCheckoutIcon,
+      path:"/orders"
     },
     {
       id:"item-5",
@@ -121,12 +125,12 @@ const Sidebar = () => {
       children:[{
         id:"child-item-9",
         lable:"List",
-        path:""
+        path:"invoice"
       },
       {
         id:"child-item-10",
         lable:"Detail",
-        path:""
+        path:"invoice"
       },
      
     ]
@@ -136,13 +140,15 @@ const Sidebar = () => {
       lable:"Task",
       badge: 17,
       dropdown:false,
-      icons:TaskAltIcon
+      icons:TaskAltIcon,
+      path:"task"
     },
     {
       id:"item-7",
       lable:"Calendar",
       dropdown:false,
-      icons:EventIcon
+      icons:EventIcon,
+      path:"calendar"
     },
     {
       id:"item-8",
@@ -152,27 +158,27 @@ const Sidebar = () => {
       children:[{
         id:"child-item-11",
         lable:"Sign In",
-        path:""
+        path:"auth"
       },
       {
         id:"child-item-12",
         lable:"Sign Up",
-        path:""
+        path:"auth"
       },
       {
         id:"child-item-13",
         lable:"Reset Password",
-        path:""
+        path:"auth"
       },
       {
         id:"child-item-14",
         lable:"404 Page",
-        path:""
+        path:"auth"
       },
       {
         id:"child-item-15",
         lable:"500 Page",
-        path:""
+        path:"auth"
       },
     ]
     }
@@ -187,17 +193,17 @@ const Sidebar = () => {
       children:[{
         id:"child-item-16",
         lable:"Default",
-        path:""
+        path:"/"
       },
       {
         id:"child-item-17",
         lable:"Analytics",
-        path:""
+        path:"/"
       },
       {
         id:"child-item-18",
         lable:"SaaS",
-        path:""
+        path:"/"
       },
     ]
 
@@ -210,27 +216,27 @@ const Sidebar = () => {
       children:[{
         id:"child-item-19",
         lable:"Profile",
-        path:""
+        path:"/"
       },
       {
         id:"child-item-20",
         lable:"Settings",
-        path:""
+        path:"/"
       },
       {
         id:"child-item-21",
         lable:"Pricing",
-        path:""
+        path:"/"
       },
       {
         id:"child-item-22",
         lable:"Chat",
-        path:""
+        path:"/"
       },
       {
         id:"child-item-23",
         lable:"Blank Page",
-        path:""
+        path:"/"
       },
     ]
     },
@@ -239,13 +245,15 @@ const Sidebar = () => {
       lable:"Forms",
       badge: 8,
       dropdown:true,
-      icons:TaskAltIcon
+      icons:TaskAltIcon,
+      path:"/"
     },
     {
       id:"item-12",
       lable:"Tables",
       dropdown:true,
-      icons:ListIcon
+      icons:ListIcon,
+      path:"/"
     },
     {
       id:"item-13",
@@ -255,12 +263,12 @@ const Sidebar = () => {
       children:[{
         id:"child-item-24",
         lable:"List",
-        path:""
+        path:"/"
       },
       {
         id:"child-item-25",
         lable:"Detail",
-        path:""
+        path:"/"
       },
      
     ]
@@ -270,7 +278,8 @@ const Sidebar = () => {
       lable:"Maps",
       badge: 17,
       dropdown:true,
-      icons:MapIcon
+      icons:MapIcon,
+      path:"/"
     },
  
   ]
@@ -323,7 +332,7 @@ const Sidebar = () => {
               <Collapse in={openDropdowns[e.id]} timeout="auto" unmountOnExit>
               <List component="div" disablePadding>
               {e.children && e.children.map((child, index) => (
-                    <ListItemButton key={index} sx={{ pl: 4 }}>
+                    <ListItemButton to={child.path} key={index} sx={{ pl: 4 }}>
                       <ListItemText primary={child.lable} className="list-items-child"/>
                     </ListItemButton>
                   ))}
@@ -331,7 +340,7 @@ const Sidebar = () => {
             </Collapse>
             </>
               :
-                <ListItemButton key={i}>
+                <ListItemButton key={i} to={e.path}>
                 <ListItemIcon>
                 <SvgIcon component={e.icons} inheritViewBox sx={{fontSize:"28px",color:'#747c88'}}/>
                 </ListItemIcon>
