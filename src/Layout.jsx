@@ -29,6 +29,7 @@ const Layout = () => {
             aria-label="mailbox folders"
             className='sidebars'
           >
+            
             <Sidebar/>
          
           </Box>

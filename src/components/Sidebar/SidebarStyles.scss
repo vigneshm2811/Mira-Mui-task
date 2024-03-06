@@ -4,18 +4,7 @@
             display: none;
         }
     }  
-    .logo-wrapper{
-        display: flex;
-        align-items: center;
-        gap:15px;
-        img{
-            width: 35px;
-        }
-        p{
-            font-size: 28px;
-            font-weight: 500;
-        }
-    }  
+   
     .list-items-parent{
         span{
             font-size: 15px;
@@ -29,3 +18,16 @@
         }
     }
 }
+.logo-wrapper{
+    display: flex;
+    align-items: center;
+    gap:15px;
+    img{
+        width: 35px;
+    }
+    p{
+        font-size: 28px;
+        font-weight: 500;
+        color: aliceblue;
+    }
+}  

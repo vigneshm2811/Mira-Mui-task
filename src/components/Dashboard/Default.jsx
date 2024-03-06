@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import "./DefaultStyles.scss";
 import CachedIcon from "@mui/icons-material/Cached";
 import FilterListIcon from "@mui/icons-material/FilterList";
@@ -12,7 +12,15 @@ import TotalRevenueGraph from "./TotalRevenueGraph";
 import WeeklySalesPieChart from "./WeeklySalesPieChart";
 import MobileDekstopGraph from "./MobileDekstopGraph";
 import LatestProject from "./LatestProject";
+import Menu from "@mui/material/Menu";
+
+import MenuItem from "@mui/material/MenuItem";
+
 const Default = () => {
+
+  const [anchorElUser, setAnchorElUser] = useState(null);
+  const durationSince = ["Today", "Yesterday", "Last 7 days", "Last 30 days","This month", "Last month"];
+
   const dashboardCardsData = [
     {
       id:"cards-1",
@@ -51,6 +59,16 @@ const Default = () => {
       duration:"Since last month"
     },
   ] 
+
+  const handleOpenUserMenu = (event) => {
+    setAnchorElUser(event.currentTarget);
+  };
+
+  const handleCloseUserMenu = () => {
+    setAnchorElUser(null);
+  };
+
+
   return (
     <div className="default-dashboard-container">
       <div className="heading">
@@ -66,9 +84,31 @@ const Default = () => {
           <IconButton disableRipple>
           <FilterListIcon className="icons" />
           </IconButton>
-          <Button className="button" disableElevation>
+          <Button  onClick={handleOpenUserMenu} className="button" disableElevation>
             Today: March 4
           </Button>
+
+          <Menu
+              sx={{ mt: "45px" }}
+              id="menu-appbar"
+              anchorEl={anchorElUser}
+              anchorOrigin={{
+                vertical: "top",
+                horizontal: "left",
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: "top",
+                horizontal: "left",
+              }}
+              open={Boolean(anchorElUser)}
+              onClose={handleCloseUserMenu}>
+              {durationSince.map((setting) => (
+                <MenuItem key={setting} onClick={handleCloseUserMenu} >
+                  <Typography textAlign="center" sx={{fontSize:"14px"}}>{setting}</Typography>
+                </MenuItem>
+              ))}
+            </Menu>
         </div>
       </div>
       <Divider />

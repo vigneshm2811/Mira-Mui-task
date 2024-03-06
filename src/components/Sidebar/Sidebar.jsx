@@ -303,19 +303,17 @@ const Sidebar = () => {
           }}
           variant="permanent"
           anchor="left">
-          <Toolbar >
-            <div className="logo-wrapper">
-              <img src={muiLogo} alt="" />
-              <p>Mira</p>
-            </div>
-            </Toolbar>
+      
           <List
             sx={{ width: "100%", maxWidth: 380, backgroundColor:"#233044" }}
             component="nav"
             aria-labelledby="nested-list-subheader"
             subheader={
-              <ListSubheader component="div" sx={{backgroundColor:"#233044",color:'#747c88', fontWeight:"600"}} id="nested-list-subheader">
-                PAGES
+              <ListSubheader component="div" sx={{backgroundColor:"#233044", fontWeight:"600"}} id="nested-list-subheader">
+                    <div className="logo-wrapper">
+              <img src={muiLogo} alt="" />
+              <p>Mira</p>
+            </div>
               </ListSubheader>
             }>
             {sidebarPagesData.map((e,i)=>{

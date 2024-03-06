@@ -41,6 +41,7 @@ const xLabels = [
       legend={{ hidden: true }}
       tooltip={{ trigger: 'item' }}
       axisHighlight={{ x: "none", y: "none" }}
+      
 
     />
         </CardContent>

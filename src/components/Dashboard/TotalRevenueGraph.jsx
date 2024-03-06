@@ -36,7 +36,7 @@ const xLabels = [
       style={{ width: '100%',height:"100%" }}
       height={410}
       className="line-chart"
-
+      
      
       series={[
         { data: salesData,label:"Sales", color: '#4782da' },
