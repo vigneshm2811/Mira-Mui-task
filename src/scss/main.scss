@@ -1,0 +1,965 @@
+// This is global styling SCSS file.
+
+@import 'fonts';
+@import 'colors';
+@import 'mixins';
+
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    outline: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: var(--black);
+    list-style: none;
+}
+
+body {
+    font-family: var(--aktiv-grotesk-light);
+    font-weight: normal;
+
+    &.menu-open {
+        overflow: hidden;
+    }
+
+    * {
+        -webkit-font-smoothing: antialiased;
+    }
+}
+
+img {
+    display: block;
+    max-width: 100%;
+
+    &.full-width {
+        width: 100%;
+    }
+}
+
+.container {
+    min-height: calc(100vh - 210px);
+
+    @include small-desktop() {
+        padding-top: 0px;
+    }
+
+    @include tablet() {
+        padding-top: 60px;
+    }
+
+    @include mobile {
+        padding-top: 60px;
+    }
+}
+
+sup {
+    font-size: 64%;
+}
+
+// Typography
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--aktiv-grotesk-medium);
+
+    &.light {
+        font-family: var(--aktiv-grotesk-medium);
+    }
+}
+
+h1,
+.h1 {
+    font-size: 60px;
+    line-height: 76px;
+    text-transform: capitalize;
+    font-family: var(--aktiv-grotesk-medium);
+    font-weight: 500;
+
+    @include mobile() {
+        font-weight: 500;
+        font-size: 35px;
+        line-height: 45px;
+    }
+}
+
+h2,
+.h2 {
+    font-size: 48px;
+    line-height: 61px;
+    font-family: var(--aktiv-grotesk-medium);
+    font-weight: 500;
+
+    @include tablet() {
+        font-size: 35px;
+        line-height: 45px;
+    }
+}
+
+h3 {
+    font-size: 50px;
+    line-height: 60px;
+    text-transform: uppercase;
+    font-weight: 350;
+
+    @include tablet() {
+        font-size: 24px;
+        line-height: 33px;
+    }
+}
+
+h4 {
+    font-weight: 375;
+    font-size: 56px;
+    line-height: 67px;
+}
+
+h5 {
+    font-weight: 700;
+    font-size: 42px;
+    line-height: 44px;
+    text-transform: uppercase;
+}
+
+h6 {
+    font-weight: 350;
+    font-size: 42px;
+    line-height: 50px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+}
+
+body,
+p,
+.p {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 300;
+    letter-spacing: 0px;
+    font-family: var(--aktiv-grotesk-light);
+
+    &.light {
+        font-weight: 300;
+    }
+
+    &.medium {
+        font-family: var(--aktiv-grotesk-medium);
+        font-weight: 500;
+    }
+
+    @include mobile() {
+        font-size: 20px;
+        line-height: 28px;
+    }
+}
+
+.menu-cta {
+    font-family: var(--aktiv-grotesk-medium);
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 26px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.subtitle-1 {
+    font-size: 35px;
+    line-height: 45px;
+    letter-spacing: 0;
+    font-family: var(--aktiv-grotesk-medium);
+    font-weight: 500;
+
+    @include mobile() {
+        font-size: 24px;
+        line-height: 31px;
+    }
+}
+
+.subtitle-2 {
+    font-size: 36px;
+    line-height: 40px;
+    font-family: var(--aktiv-grotesk-medium);
+    font-weight: 400;
+}
+
+.subtitle-3 {
+    font-size: 32px;
+    line-height: 38px;
+    text-transform: uppercase;
+    font-weight: 350;
+}
+
+.subtitle-4 {
+    font-size: 24px;
+    line-height: 31px;
+    font-family: var(--aktiv-grotesk-bold);
+    font-weight: 700;
+}
+
+.subtitle-5 {
+    font-size: 30.7317px;
+    line-height: 39px;
+    font-family: var(--aktiv-grotesk-medium);
+    font-weight: 400;
+}
+
+.subhead-small {
+    font-family: var(--aktiv-grotesk-medium);
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.banner-head {
+    font-family: var(--aktiv-grotesk-medium);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 90px;
+    line-height: 108px;
+    color: var(--primary-black);
+}
+
+.side-nav {
+    font-family: var(--aktiv-grotesk-medium);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 48px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+}
+
+// Mobile Hamburger menu-cta
+
+.mobile-nav {
+    .nav-head {
+        font-family: var(--aktiv-grotesk-medium);
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 50px;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+    }
+
+    a {
+        color: var(--black);
+        font-family: var(--aktiv-grotesk-light);
+        font-weight: 300 !important;
+        font-size: 20px !important;
+        line-height: 30px !important;
+        text-transform: capitalize !important;
+    }
+
+    .account-link {
+        padding: 0px 20px;
+        a {
+            font-family: var(--aktiv-grotesk-medium) !important;
+            font-weight: 400 !important;
+            font-size: 20px !important;
+            line-height: 50px !important;
+            letter-spacing: 0.5px !important;
+            text-transform: uppercase !important;
+        }
+    }
+}
+
+// Card
+.card {
+    &.small {
+        font-size: 20px;
+        line-height: 42px;
+        letter-spacing: 0.02em;
+    }
+
+    p {
+        &.bold {
+            font-weight: 400;
+        }
+    }
+}
+
+.card-header {
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 33px;
+    text-transform: capitalize;
+    font-family: var(--aktiv-grotesk-medium);
+
+    @include mobile() {
+        font-size: 22px;
+        line-height: 28px;
+    }
+}
+
+.card-body {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 22px;
+    font-family: var(--aktiv-grotesk-light);
+
+    @include mobile() {
+        font-weight: 300;
+        font-size: 20px;
+        line-height: 28px;
+    }
+}
+
+.small-copy,
+.small-copy p {
+    font-size: 14px;
+    line-height: 19px;
+}
+
+.big-copy {
+    font-size: 20px;
+    line-height: 25px;
+}
+
+.center-text {
+    text-align: center;
+}
+
+.right-text {
+    text-align: right;
+}
+
+.error-text {
+    font-size: 14px;
+    line-height: 19px;
+    color: var(--light-red);
+}
+
+.success-text {
+    font-size: 14px;
+    line-height: 19px;
+    display: flex;
+
+    svg {
+        margin-right: 12px;
+    }
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+a {
+    cursor: pointer;
+    color: var(--black);
+}
+
+// Colour text
+.white-text {
+    color: var(--white);
+}
+
+// Structure
+.page {
+    .wrapper {
+        padding: 0px 165px;
+        max-width: $max-content-width;
+        margin: auto;
+
+        @include small-desktop() {
+            padding: 0px 30px;
+        }
+
+        @include tablet() {
+            padding: 0px 20px;
+        }
+
+        @include mobile() {
+            padding: 0px 20px;
+
+            &.no-mobile-padding {
+                padding: 0px;
+            }
+        }
+    }
+
+    .page-header {
+        padding: 40px 18px;
+        text-transform: uppercase;
+    }
+
+    .main-title {
+        margin-top: 25px;
+        margin-bottom: 33px;
+    }
+}
+
+.MuiGrid-container {
+    max-width: $max-content-width;
+    margin: auto;
+}
+
+.error-txt {
+    font-family: var(--aktiv-grotesk-medium);
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 27px;
+    color: var(--light-red);
+    padding-left: 10px;
+}
+
+.title {
+    text-align: center;
+    padding: 85px 0 45px;
+
+    .sub-head {
+        margin-bottom: 8px;
+
+        &.underline {
+            &::after {
+                content: '';
+                display: block;
+                margin: 12px auto 0px;
+                width: 56px;
+                height: 1px;
+                background-color: var(--primary-black);
+
+                @include mobile {
+                    width: 42px;
+                }
+            }
+        }
+    }
+
+    h3 {
+        color: var(--brown);
+        display: inline-block;
+        position: relative;
+        padding-bottom: 8px;
+
+        &::after {
+            display: block;
+            content: '';
+            width: 100%;
+            position: absolute;
+            height: 2px;
+            background-color: var(--brown);
+            bottom: 0px;
+            left: 0px;
+
+            @include mobile {
+                width: 125px;
+                left: calc(50% - 62.5px);
+            }
+        }
+    }
+
+    &.white {
+        @include title(var(--white));
+    }
+
+    &.black {
+        @include title(var(--primary-black));
+    }
+
+    &.light-gray {
+        @include title(var(--light-gray));
+    }
+
+    &.left-align {
+        text-align: left;
+
+        @include mobile {
+            h3::after {
+                left: 0;
+            }
+        }
+    }
+
+    @include mobile() {
+        padding-top: 45px;
+    }
+}
+
+.tick-checklist {
+    li {
+        margin-bottom: 16px;
+        position: relative;
+        padding-left: 24px;
+
+        &::before {
+            display: block;
+            content: '';
+            width: 8px;
+            height: 3px;
+            border-left: 2px solid var(--primary-black);
+            border-bottom: 2px solid var(--primary-black);
+            transform: rotate(-45deg);
+            left: 0;
+            top: 8px;
+            position: absolute;
+        }
+    }
+}
+
+// Responsive
+.hide-desktop {
+    @include desktop() {
+        display: none !important;
+    }
+}
+
+.hide-tablet {
+    @include tablet-only() {
+        display: none !important;
+    }
+}
+
+.hide-tablet-mobile {
+    @include tablet() {
+        display: none !important;
+    }
+}
+
+.hide-mobile {
+    @include mobile() {
+        display: none !important;
+    }
+}
+
+// Button, Button with icon, Input, Textarea, and Dropdown
+input,
+textarea {
+    &::placeholder {
+        color: var(--primary-black) !important;
+        font-family: var(--aktiv-grotesk-medium);
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 22px;
+    }
+
+    &.small-input {
+        color: var(--primary-black) !important;
+        font-family: var(--aktiv-grotesk-light);
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 22px;
+    }
+}
+
+.MuiButton-root {
+    //min-width: 235px !important;
+    padding: 16px 24px !important;
+    font-size: 18px !important;
+    line-height: 23px !important;
+    text-transform: uppercase !important;
+    font-weight: 600 !important;
+    box-shadow: none !important;
+    font-family: var(--aktiv-grotesk-medium) !important;
+    border-radius: 8px !important;
+
+    @include mobile {
+        &.small-in-mobile {
+            min-width: 160px !important;
+            font-size: 12px !important;
+            line-height: 16px !important;
+            letter-spacing: 0.1px !important;
+        }
+    }
+
+    &.Mui-disabled {
+        opacity: 0.4;
+    }
+
+    &.MuiButton-outlined {
+        padding: 18px 8px !important;
+
+        @include mobile() {
+            padding: 18px 20px !important;
+            max-width: 100% !important;
+        }
+    }
+
+    // Primary Button
+    &.primary-btn {
+        font-family: var(--aktiv-grotesk-medium) !important;
+        font-weight: 500 !important;
+        font-size: 20px !important;
+        line-height: 26px !important;
+        background-color: transparent !important;
+        border: 1px solid var(--primary-navy-blue) !important;
+        border-radius: 0px !important;
+        color: var(--primary-navy-blue) !important;
+        letter-spacing: 0.05em !important;
+        text-transform: uppercase !important;
+        padding: 18px 61.5px !important;
+
+        &:hover {
+            background-color: var(--primary-navy-blue) !important;
+            border-color: var(--primary-navy-blue) !important;
+            color: var(--white) !important;
+        }
+
+        @include mobile() {
+            max-width: 100%;
+            width: 100%;
+            font-size: 18px !important;
+            line-height: 23px !important;
+            padding: 16px 20px !important;
+            white-space: nowrap;
+        }
+    }
+
+    // Secondary Button
+    &.secondary-btn {
+        font-family: var(--aktiv-grotesk-medium);
+        font-weight: 500 !important;
+        font-size: 20px !important;
+        line-height: 26px !important;
+        background-color: var(--primary-navy-blue) !important;
+        border: 1px solid var(--primary-navy-blue) !important;
+        color: var(--white) !important;
+        border-radius: 0px !important;
+        padding: 18px 61.5px !important;
+
+        &:hover {
+            background-color: var(--primary-navy-blue) !important;
+            border-color: var(--primary-navy-blue) !important;
+        }
+
+        @include mobile() {
+            max-width: 100%;
+            width: 100%;
+            font-size: 18px !important;
+            line-height: 23px !important;
+            padding: 16px 20px !important;
+            white-space: nowrap;
+        }
+    }
+
+    &.no-border {
+        border: 0px !important;
+    }
+
+    &.MuiButton-text {
+        color: var(--primary-black) !important;
+        background-color: var(--white) !important;
+
+        &:hover {
+            color: var(--dark-gray) !important;
+        }
+    }
+
+    &.full-width {
+        width: 100%;
+    }
+}
+
+.MuiInputBase-root {
+    border-radius: 0px !important;
+    padding: 0px !important;
+    border: 0.5px solid var(--black) !important;
+
+    .MuiInputBase-input {
+        padding: 12px !important;
+        text-align: left;
+        color: var(--primary-black) !important;
+        font-family: var(--aktiv-grotesk-medium) !important;
+        font-weight: 500 !important;
+        font-size: 16px !important;
+        line-height: 22px !important;
+    }
+
+    .MuiSelect-icon {
+        top: calc(50% - 12px);
+    }
+
+    .MuiOutlinedInput-notchedOutline {
+        border: none;
+    }
+
+    &.Mui-error {
+        .MuiOutlinedInput-notchedOutline {
+            border: 0.5px solid var(--red) !important;
+        }
+    }
+
+    .select-icon {
+        position: absolute;
+        right: 24px;
+        z-index: -1;
+    }
+}
+
+label,
+.label {
+    color: var(--black) !important;
+    font-family: var(--aktiv-grotesk-medium) !important;
+    font-weight: 500 !important;
+    font-size: 16px !important;
+    line-height: 20px !important;
+    letter-spacing: 0.05em !important;
+    text-transform: uppercase !important;
+}
+
+.MuiFormControl-root {
+    &.full-width {
+        width: 100%;
+    }
+}
+
+.MuiFormGroup-root {
+    position: relative;
+    margin-bottom: 24px;
+
+    label.sub-head {
+        margin-bottom: 8px;
+        text-align: left;
+    }
+
+    .error-text {
+        color: var(--sand-gray);
+        padding-top: 4px;
+        text-align: left;
+    }
+
+    .MuiIconButton-root {
+        width: 40px;
+        position: absolute;
+        top: 38px;
+        right: 10px;
+    }
+}
+
+.MuiGrid-root {
+    .MuiFormGroup-root {
+        margin-bottom: 0px;
+    }
+}
+
+.MuiRadio-root {
+    padding: 0px !important;
+    width: 42px;
+    height: 42px;
+    border: 1px solid var(--light-charcol) !important;
+    border-radius: 0px !important;
+    background-color: var(--white) !important;
+    position: relative;
+
+    &.Mui-checked {
+        background-color: var(--light-brown) !important;
+
+        &::after {
+            display: block;
+            content: '';
+            width: 18px;
+            height: 8px;
+            border-left: 2px solid var(--primary-black);
+            border-bottom: 2px solid var(--primary-black);
+            transform: rotate(-45deg);
+            margin-top: -6px;
+        }
+    }
+
+    .MuiSvgIcon-root {
+        display: none;
+    }
+}
+
+.Mui-selected {
+    background-color: var(--ash) !important;
+}
+
+.MuiSelect-select {
+    font-weight: 800 !important;
+    color: var(--brown) !important;
+    text-transform: uppercase;
+    padding: 22px 36px 24px 18px !important;
+}
+
+.MuiChip-root {
+    &.MuiChip-colorSecondary {
+        min-width: 100px;
+        background-color: var(--light-brown);
+        color: var(--primary-black);
+        text-transform: uppercase;
+
+        &.MuiChip-outlined {
+            background-color: var(--cream);
+            border: 2px solid var(--light-brown);
+        }
+    }
+
+    &.MuiChip-colorPrimary {
+        background-color: var(--primary-black);
+
+        span {
+            color: var(--white);
+            font-size: 14px;
+        }
+
+        &:hover {
+            background-color: var(--primary-black-hover);
+        }
+    }
+
+    &.MuiChip-colorError {
+        background-color: var(--light-red);
+        margin-left: 16px;
+        border-radius: 4px;
+
+        span {
+            color: var(--red);
+            font-size: 14px;
+        }
+    }
+}
+
+.form-header {
+    background-color: var(--ash);
+    text-align: left;
+    padding: 13px 16px;
+
+    .small-copy {
+        margin-top: 16px;
+    }
+}
+
+.inverted-icon {
+    transform: rotate(180deg);
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+hr {
+    height: 2px;
+    background-color: var(--dark-gray);
+    text-align: center;
+    display: flex;
+    max-width: $max-content-width;
+    opacity: 10%;
+}
+
+hr.thick-divider {
+    height: 14px;
+    background-color: var(--light-brown);
+}
+
+// about page common
+.about {
+    .wrapper {
+        padding-bottom: 90px;
+
+        @include tablet() {
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+    }
+}
+
+.sub-nav.top-nav {
+    padding-top: 0px;
+    text-transform: uppercase;
+
+    ul {
+        padding-top: 0px;
+        li {
+            a {
+                font-family: var(--aktiv-grotesk-medium);
+                font-weight: 500;
+                font-size: 20px;
+                line-height: 26px;
+            }
+        }
+    }
+}
+
+.common-list {
+    li {
+        font-weight: 300;
+        font-size: 24px;
+        line-height: 32px;
+        color: var(--black);
+        padding: 10px 25px 10px 10px;
+        text-align: left;
+        list-style: disc;
+
+        @include mobile() {
+            line-height: 28px;
+            font-size: 20px;
+        }
+    }
+}
+
+.view-link {
+    font-family: var(--aktiv-grotesk-bold);
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 13px;
+    color: var(--moonstone-blue);
+    text-transform: uppercase;
+    display: inline-block;
+    margin-top: 36px;
+
+    @include mobile {
+        margin-top: 14px;
+        font-size: 12px;
+        line-height: 17px;
+    }
+}
+
+// To hide default cross on text field
+input[type='text']::-ms-clear {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+input[type='text']::-ms-reveal {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+input[type='search']::-webkit-search-decoration,
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-results-button,
+input[type='search']::-webkit-search-results-decoration {
+    display: none;
+}
+
+.check-font {
+    label {
+        span {
+            font-family: var(--aktiv-grotesk-light);
+            font-weight: 300;
+            font-size: 16px;
+            line-height: 22px;
+            text-transform: capitalize;
+
+            svg {
+                color: var(--medium-gray) !important;
+
+                path {
+                    color: var(--medium-gray) !important;
+                }
+            }
+        }
+    }
+}
+
+// Accept all cookies button and cookie setting link color change.
+#onetrust-accept-btn-handler {
+    background-color: var(--primary-navy-blue) !important;
+    border-color: var(--primary-navy-blue) !important;
+
+    &:hover {
+        background-color: var(--primary-navy-blue) !important;
+        border-color: var(--primary-navy-blue) !important;
+    }
+}
+
+#onetrust-pc-btn-handler {
+    color: var(--primary-navy-blue) !important;
+}

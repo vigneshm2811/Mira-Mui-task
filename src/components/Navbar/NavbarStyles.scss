@@ -1,10 +1,21 @@
-
+@import "../../scss/mixins.scss";
 
 .toolbar{
     display: flex;
     padding: 15px 30px !important;
     justify-content: space-between;
     align-items: center;
+    .search{
+        @include tablet(){
+            display: none;
+        }
+    }
+    .hamburger{
+        display: none;
+        @include tablet(){
+            display: block;
+        }
+    }
     .icons-wrapper{
         color: gray;
         display: flex;

@@ -21,7 +21,7 @@ import Link from '@mui/material/Link';
 import Lucy from '../../assets/avatar-1.jpg'
 import Remy from '../../assets/avatar-2.jpg'
 import Mixon from '../../assets/avatar-3.jpg'
-
+import MenuIcon from '@mui/icons-material/Menu';
 
 
 const drawerWidth = 240;
@@ -68,6 +68,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 const Navbar = () => {
   const [anchorEl, setAnchorEl] = useState(null);
   const [menuType, setMenuType] = useState(null);
+  const [hamburger,setHamburger] = useState(false);
   const langauges = ["English", "French", "German", "Dutch"];
   const accounts = ["Profile", "Sign out"];
   const messages =[
@@ -121,6 +122,11 @@ const Navbar = () => {
     setMenuType(null);
   };
 
+  const handelHamburger =({propsdata})=>{
+    setHamburger(true)
+    propsdata(hamburger)
+  }
+
   return (
     <div>
       <AppBar
@@ -131,9 +137,11 @@ const Navbar = () => {
           backgroundColor: "white",
           boxShadow: "0px 3px 6px 0px rgba(172,170,170,0.3)",
         }}
+        className='appbar'
+
       >
         <Toolbar className="toolbar">
-          <Search>
+          <Search className="search">
             <SearchIconWrapper>
               <SearchIcon sx={{ color: "gray", fontSize: "28px" }} />
             </SearchIconWrapper>
@@ -142,6 +150,9 @@ const Navbar = () => {
               inputProps={{ "aria-label": "search" }}
             />
           </Search>
+          <div className="hamburger">
+            <MenuIcon sx={{color:"gray"}} onClick={handelHamburger}/>
+          </div>
 
           <div className="icons-wrapper">
             <Badge badgeContent={4} color="primary" onClick={(event) => handleMenuOpen(event, "messages")}>
@@ -293,6 +304,8 @@ const Navbar = () => {
         </Toolbar>
       </AppBar>
     </div>
+
+    
   );
 };
 

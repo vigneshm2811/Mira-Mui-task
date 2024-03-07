@@ -31,7 +31,7 @@ const xLabels = [
             <MoreVertIcon sx={{color:"black",cursor:"pointer"}}/>
     </div>
         <BarChart
-      
+      className='mobile-bars'
       height={300}
       series={[
           { data: mobileData, label: 'Mobile', id: 'Mobile', stack: 'total',barWidth: 10,color:"#4782da" },

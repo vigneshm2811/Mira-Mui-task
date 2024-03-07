@@ -1,8 +1,12 @@
+@import "../../scss/mixins";
+
 .default-dashboard-container{
     .heading{
         display: flex;
         justify-content: space-between;
-
+        @include tablet() {
+           
+          }
         .heading-text{
             h2{
                 line-height: 1;
@@ -33,9 +37,21 @@
     .dashboard-cards{
         margin-top: 20px;
         display: flex;
+        flex-wrap: wrap;
+        row-gap: 20px;
         justify-content: space-between;
+        @include tablet(){
+            justify-content: center;
+            gap: 10px;
+        }
         .cards{
             width: 24%;
+            @include tablet(){
+                width: 32%;
+            }
+            @include mobile(){
+                width: 48%;
+            }
             box-shadow: rgba(50, 50, 93, 0.024) 0px 2px 5px -1px, rgba(0, 0, 0, 0.05) 0px 1px 3px -1px;
             .css-3qzz3m-MuiCardContent-root:last-child {
                 padding-bottom: 0px;
@@ -95,28 +111,61 @@
     .graphs-Section{
         margin-top: 20px;
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;
+        @include tablet(){
+            justify-content: center;
+            row-gap: 20px;
+        }
         .total-revenue{
             width: 67%;
+            @include tablet(){
+                width: 95% ;
+            }
             
 
         }
 
         .weekly-sales{
             width: 32%;
-          
+            @include tablet(){
+                width: 95% ;
+            }
         }
     }
 
     .last-section{
         margin-top: 20px;
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;
+        @include tablet(){
+           justify-content: center;
+           row-gap: 20px;
+        }
         .moblie-dekstop-graph{
             width: 34%;
+            @include tablet(){
+                width: 98% ;
+            }
+            .css-172kpif-MuiResponsiveChart-container{
+                svg{
+
+                    g{
+                        rect{
+                          width: 10px !important;
+                        //   transform: translate3d(62.35px, 196px, 0px) !important;
+
+                        }
+                    }
+                }
+            }
         }
         .latest-projects{
             width: 65%;
+            @include tablet(){
+                width: 98% ;
+            }
 
             .status-badge{
                 color: white;
