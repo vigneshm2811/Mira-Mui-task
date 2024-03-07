@@ -290,7 +290,7 @@ const Sidebar = () => {
         <CssBaseline />
 
         <Drawer
-       
+        className="sideBarsNav"
           sx={{
             width: drawerWidth,
             flexShrink: 0,

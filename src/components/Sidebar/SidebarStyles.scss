@@ -1,4 +1,4 @@
-.sideBars{
+.sideBarsNav{
     div{
         &::-webkit-scrollbar{
             display: none;
@@ -7,14 +7,14 @@
    
     .list-items-parent{
         span{
-            font-size: 15px;
+            font-size: 15px !important;
         }
     }
     
     .list-items-child{
         // text-align: justify;
         span{
-            font-size: 13px;
+            font-size: 13px !important;
         }
     }
 }
