@@ -10,7 +10,7 @@
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist -b gh-pages -u \"github-actions-bot <support+actions@github.com>\""
+    "deploy": "gh-pages -d dist -b gh-pages -u \"github-actions-bot <support+actions@github.com>\" --repo=https://<GH_TOKEN>@github.com/vigneshm2811/Mira-Mui-task.git"
   },
   "dependencies": {
     "@emotion/react": "^11.11.4",
