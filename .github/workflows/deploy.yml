@@ -1,0 +1,29 @@
+name: Mira UI Deployment
+# This workflow will build and deploy your Mira UI project to a server or cloud service
+
+on:
+  push:
+    branches:
+      - main  # or your deploy branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'  # or your project's Node version
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build and Deploy
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          npm run deploy
